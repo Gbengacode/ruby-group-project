@@ -1,10 +1,11 @@
 require 'date'
 class Item
-  attr_accessor :id, :publish_date, :archived, :author, :label, :genre
+  attr_accessor :id, :publish_date, :archived
+  attr_reader :label, :genre, :author
 
-  def initialize(publish_date, archived = false)
+  def initialize(publish_date, archived: false)
     @id = Random.rand(1..100)
-    @publish_date =  publish_date
+    @publish_date = publish_date
     @archived = archived
   end
 
@@ -14,8 +15,8 @@ class Item
 
   def can_be_archived?
     my_date = Date.parse(@publish_date)
-    timeDiff =  Date.today.year - my_date.year
-    timeDiff > 10
+    difference = Date.today.year - my_date.year
+    difference > 10
   end
 
   def label=(label)
@@ -32,10 +33,6 @@ class Item
     @author = author
     author.items.push(self) unless author.items.include?(self)
   end
-  
+
   private :can_be_archived?
-
 end
-
-
-
