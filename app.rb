@@ -14,8 +14,8 @@ require_relative './modules/authors_module'
 
 class App
   include MusicAlbumModule
-  include BooksDataController
-  include LabelsDataController
+  include BooksModule
+  include LabelsModule
   include GamesModule
   include AuthorsModule
 
