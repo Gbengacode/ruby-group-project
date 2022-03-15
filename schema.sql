@@ -13,6 +13,14 @@ CREATE TABLE item (
     FOREIGN KEY (label_id) REFERENCES labels (id)
 );
 
+-- CREATE TABLE labels 
+CREATE TABLE labels (
+    id  INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(100),
+    color VARCHAR(100),
+    PRIMARY KEY(id)
+);
+
 -- CREATE TABLE books 
 CREATE TABLE books (
     id  INT,
