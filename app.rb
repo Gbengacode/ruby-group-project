@@ -48,7 +48,7 @@ class App
     when '8'
       add_music_album
     when '9'
-        add_game
+      add_game
     end
   end
 
