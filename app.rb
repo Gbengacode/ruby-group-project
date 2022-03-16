@@ -1,30 +1,29 @@
 require_relative './item'
-require_relative './classes/music_album'
+# require_relative './classes/music_album'
 require_relative './classes/game'
-require_relative './classes/genre'
+# require_relative './classes/genre'
 
 require_relative './classes/book'
 require_relative './classes/label'
-require_relative './modules/music_album_module'
-require_relative './modules/genres_module'
+# require_relative './modules/music_album_module'
+# require_relative './modules/genres_module'
 require_relative './modules/book_module'
 require_relative './modules/label_module'
 require_relative './modules/games_module'
-require_relative './modules/authors_module'
+require_relative './modules/author_module'
 
 class App
-  include MusicAlbumModule
-  include BooksModule
-  include LabelsModule
+  # include MusicAlbumModule
+  include LabelsDataController
   include GamesModule
   include AuthorsModule
-
+  include BooksDataController
   def initialize
     @books = load_books
     @authors = load_authors
     @games = load_games
-    @music_albums = load_music_albums
-    @load_genres = load_genres
+    # @music_albums = load_music_albums
+    # @load_genres = load_genres
     @add_book_details = load_books
     @labels = load_labels
   end
@@ -34,11 +33,11 @@ class App
     when '1'
       list_books
     when '2'
-      list_all_music_album
+      # list_all_music_album
     when '3'
       list_all_games
     when '4'
-      list_all_genres
+      # list_all_genres
     when '5'
       list_labels
     when '6'
@@ -52,13 +51,6 @@ class App
     end
   end
 
-  def list_all_music_album
-    puts 'Music Albums'
-    @music_albums.each do |music_album|
-      puts "Name: #{music_album.name}, Publish Date: #{music_album.publish_date}, On Spotify: #{music_album.on_spotify}"
-    end
-  end
-
   def list_all_games
     puts 'Music Albums:'
     @games.each do |games|
@@ -67,12 +59,12 @@ class App
     end
   end
 
-  def list_all_genres
-    puts 'Genres:'
-    @load_genres.each do |genre|
-      puts "Genre name: #{genre.name}"
-    end
-  end
+  # def list_all_genres
+  #   puts 'Genres:'
+  #   @load_genres.each do |genre|
+  #     puts "Genre name: #{genre.name}"
+  #   end
+  # end
 
   def list_all_authors
     puts 'Authors:'
@@ -80,20 +72,6 @@ class App
       puts "First Name: #{author.first_name} "
       puts "Last Name: #{author.last_name} "
     end
-  end
-
-  def add_music_album
-    puts 'Album name: '
-    name = gets.chomp
-
-    puts 'Date of publish [Enter date in format (yyyy-mm-dd)]'
-    publish_date = gets.chomp
-
-    puts 'Is it available on Spotify? Y/N'
-    on_spotify = gets.chomp.downcase == 'y' || false
-
-    @music_albums.push(MusicAlbum.new(name, publish_date, on_spotify))
-    puts 'Music album created'
   end
 
   def add_game

@@ -27,7 +27,7 @@ class Main
       input = gets.chomp
       @app.options_cases(input)
     end
-    @app.create_music_album
+    # @app.create_music_album
     @app.create_games
     @app.save_books
     puts 'Thanks for using this app'
