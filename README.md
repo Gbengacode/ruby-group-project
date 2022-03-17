@@ -4,6 +4,8 @@
 
 > Things-catalog is a console based project written in Ruby langueage, Where users can store books, music-albums, games and other data. The data is being save to the json files and gets back to the application on restart.
 
+![screenshot](./screen.png)
+
 ## Video Project Presentation
 [Video Link](https://drive.google.com/file/d/15scQIfhdTM2s4p-RxD1RU_yjQ1qPTMVZ/view?usp=sharing)
 ## Built With
@@ -24,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Using it Locally
 
-- Clone the project
+- Clone the project using bash
 
 ```bash 
 git clone git@github.com:Gbengacode/ruby-group-project.git
