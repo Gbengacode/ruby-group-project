@@ -10,9 +10,9 @@ class Main
         1 - List all books
         2 - List all music albums
         3 - List all games
-        4 - List all genres (e.g "Comedy", "Thriller")
-        5 - List all labels (e.g "Gift", "New")
-        6 - List all authors (e.g "Stephan King")
+        4 - List all genres
+        5 - List all labels
+        6 - List all authors
         7 - Add a book
         8 - Add music album
         9 - Add a game
@@ -27,10 +27,10 @@ class Main
       input = gets.chomp
       @app.options_cases(input)
     end
-    # @app.create_music_album
+    @app.create_music_album
     @app.create_games
     @app.save_books
-    puts 'Thanks for using this app'
+    puts 'Successfully exit app'
   end
 end
 
