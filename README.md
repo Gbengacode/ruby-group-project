@@ -45,7 +45,7 @@ OR
 
 ```bash
 open terminal
-run ruby available_files.rb
+run ruby main.rb
 ```
 
 - To run the tests
