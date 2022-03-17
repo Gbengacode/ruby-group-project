@@ -4,7 +4,8 @@
 
 > Things-catalog is a console based project written in Ruby langueage, Where users can store books, music-albums, games and other data. The data is being save to the json files and gets back to the application on restart.
 
-
+## Video Project Presentation
+[Video Link](https://drive.google.com/file/d/15scQIfhdTM2s4p-RxD1RU_yjQ1qPTMVZ/view?usp=sharing)
 ## Built With
 
 - Major languages (Ruby)
